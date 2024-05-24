@@ -37,7 +37,7 @@ module Faraday
       def parse(body)
         case body
         when Hash
-          mash_class.new(body)
+          mash_class.quiet.new(body)
         when Array
           body.map { |item| parse(item) }
         else
